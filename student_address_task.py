@@ -205,7 +205,8 @@ while True:
                                           '2.Update Student \n'
                                           '3.Delete Student \n'
                                           '4.Show Student \n'
-                                          '5.Back to Options: ')
+                                          '5.Show Student by marks(descending)\n'
+                                          '6.Back to Options: ')
                 try:
                     student_option_check(student_option)
                     student_option=int(student_option)
@@ -294,13 +295,32 @@ while True:
                     i=1
                     for x in stu_list:
                          print(f' Student {i}-> Rn:{x.getRn()} , Name:{x.getName()} ,Marks:{x.getMarks()},Address:{x.getAddress()}')
-                         i+=1
+                         i+=1    
+                    
+                else:
+                    print('Please add Students first')
+
+            elif student_option==5:
+                if stu_list:
+                    mark_list=[]
+                    for x in stu_list:
+                        mark_list.append(x.getMarks())
+                    mark_list.sort(reverse=True)
+                    i=1
+                    for y in mark_list:
+                        for x in stu_list:
+                            if x.getMarks()==y:
+                                print(f' Student {i}-> Rn:{x.getRn()} , Name:{x.getName()} ,Marks:{x.getMarks()},Address:{x.getAddress()}')
+                                i+=1
+                        
+                        
                         
                     
                 else:
-                    print('Please add some Students first')
+                    print('Please add Students first')
+                    
 
-            elif student_option==5:
+            elif student_option==6:
                 break
 
 

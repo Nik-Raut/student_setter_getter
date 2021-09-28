@@ -85,7 +85,7 @@ def student_option_check(x):
         raise StudentOptionError('Enter value in Integers only')
     elif int(x)<=0:
         raise StudentOptionError('Enter non-zero non-negative Intergers only')
-    elif int(x)>5:
+    elif int(x)>6:
         raise StudentOptionError('Enter choice from above options only')
 
 
